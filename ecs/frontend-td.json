@@ -1,0 +1,77 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:654654554686:task-definition/devops-na-nuvem-ecs-portal-task:4",
+    "containerDefinitions": [
+        {
+            "name": "portal",
+            "image": "654654554686.dkr.ecr.us-east-1.amazonaws.com/amplify-react-app",
+            "cpu": 1024,
+            "memory": 2048,
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/aws/devop-na-nuvem-ecs-cluster/log-group",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "devops-na-nuvem-ecs-portal-task",
+    "executionRoleArn": "arn:aws:iam::654654554686:role/devops-na-nuvem-ecs-execution-role",
+    "networkMode": "awsvpc",
+    "revision": 4,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "2048",
+    "registeredAt": "2024-05-21T21:01:05.535Z",
+    "registeredBy": "arn:aws:sts::654654554686:assumed-role/devops-na-nuvem-week-terraform-role/aws-go-sdk-1716325260854750006",
+    "tags": []
+}
